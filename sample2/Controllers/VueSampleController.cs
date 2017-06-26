@@ -18,5 +18,10 @@ namespace sample2.Controllers
         {
             return View();
         }
+
+        public IActionResult AttributeBinding()
+        {
+            return View();
+        }
     }
 }

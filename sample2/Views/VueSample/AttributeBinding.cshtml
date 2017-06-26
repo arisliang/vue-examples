@@ -1,0 +1,43 @@
+﻿<style>
+    .color-red {
+        color: red;
+    }
+
+    .color-blue {
+        color: blue;
+    }
+
+    .is-loading {
+        background: yellow;
+    }
+</style>
+
+<h1>Step 5: Attribute binding</h1>
+
+<div id="root">
+    <button v-bind:title="title">Hover over me</button>
+
+    <h1 :class="className">Hello World</h1>
+
+    <button class="btn" :class="{ 'is-loading': isLoading }" v-on:click="toggleClass">Click Me</button>
+</div>
+
+<script src="~/lib/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            title: 'Now the title is being set through JavaScript',
+            className: 'color-red',
+            isLoading: false,
+        },
+        methods: {
+            toggleClass: function () {
+                this.isLoading = true;
+
+            }
+
+        }
+    });
+</script>
