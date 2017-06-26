@@ -4,12 +4,13 @@
     <ul>
         <li v-for="name in names">{{name}}</li>
     </ul>
-    <input type="text" class="form-control" v-model="newName" v-on:keyup="addName" />
+    <input id="newNameInput" type="text" class="form-control" v-model="newName" />
     <button class="btn btn-primary btn-sm" v-on:click="addName">Add Name</button>
 </div>
 
-<script src="~/lib/vue/dist/vue.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/lib/lodash/dist/lodash.js"></script>
+<script src="~/lib/vue/dist/vue.js"></script>
 
 <script>
     new Vue({
