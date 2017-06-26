@@ -13,5 +13,10 @@ namespace sample2.Controllers
         {
             return View();
         }
+
+        public IActionResult Lists()
+        {
+            return View();
+        }
     }
 }

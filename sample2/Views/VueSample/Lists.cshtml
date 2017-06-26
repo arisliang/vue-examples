@@ -1,0 +1,21 @@
+﻿<h1>Step 3: Lists</h1>
+
+<div id="root" v-cloak>
+    <ul>
+        <li v-for="name in names">{{name}}</li>
+    </ul>
+    <input type="text" class="form-control" />
+    <button class="btn btn-primary btn-sm">Add Name</button>
+</div>
+
+<script src="~/lib/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            names: ['Joe', 'Mary', 'Jane', 'Jack']
+
+        }
+    });
+</script>

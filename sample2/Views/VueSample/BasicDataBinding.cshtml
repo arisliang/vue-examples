@@ -1,10 +1,12 @@
-﻿<div id="root">
-    <input class="form-control" type="text" id="input" v-model="message"/>
+﻿<h1>Step 1: Basic Data Binding</h1>
+
+<div id="root">
+    <input class="form-control" type="text" id="input" v-model="message" />
     <pre>The value of the input is: {{message}}</pre>
     <pre>The data of vue is {{$data}}</pre>
 </div>
 
-<script src="~/lib/vue/dist/vue.min.js"></script>
+<script src="~/lib/vue/dist/vue.js"></script>
 
 <script>
     var vue = new Vue({

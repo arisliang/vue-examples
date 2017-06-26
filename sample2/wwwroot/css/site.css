@@ -35,3 +35,10 @@ textarea {
         display: none;
     }
 }
+
+/*
+    Vue
+*/
+[v-cloak] {
+    display: none;
+}
