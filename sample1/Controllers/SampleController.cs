@@ -11,11 +11,19 @@ namespace sample1.Controllers
     {
         public IActionResult Sample1()
         {
+            // binding and filtering
             return View();
         }
 
         public IActionResult Sample2()
         {
+            // toggle visibility
+            return View();
+        }
+
+        public IActionResult Sample3()
+        {
+            // event handling
             return View();
         }
     }

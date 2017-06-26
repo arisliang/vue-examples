@@ -1,0 +1,38 @@
+﻿<h1>
+    Event handling
+</h1>
+
+<div id="app">
+    <form class="form-group" action="~/html/done.html" v-on:submit.prevent="handleIt">
+        <input type="submit" class="btn btn-primary" value="Submit me!" v-on:click="doSomething"/>
+    </form>
+
+    <button type="submit" class="btn btn-success" v-on:click="incrCount">
+        Increment Counter: {{count}}
+    </button>
+</div>
+
+<script src="~/lib/vue/dist/vue.min.js"></script>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            count:0
+
+        },
+        methods: {
+            handleIt: function () {
+                alert('Handled');
+            },
+            doSomething: function () {
+                alert('Done something!');
+
+            },
+            incrCount: function () {
+                this.count++;
+
+            }
+        }
+    });
+</script>
