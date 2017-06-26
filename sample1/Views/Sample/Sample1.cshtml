@@ -1,0 +1,71 @@
+﻿<h1>Vue Sample 1: Binding and filtering</h1>
+
+<h2>jquery filter</h2>
+
+<input type="text" class="js-filter" placeholder="jQuery Filter">
+<ul class="js-posts"></ul>
+
+<h2>Vue filter</h2>
+<div id="app">
+    <h2>{{message}}</h2>
+    <input type="text" v-model="filter" placeholder="Vue Filter">
+    <p>Filter: {{filter}}</p>
+    <ul v-for="person in filteredPeople">
+        <li>{{person}}</li>
+    </ul>
+    @*<ul v-for="person in people | filterBy filter">
+            <li>{{ person }}</li>
+        </ul>*@
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/vue/dist/vue.min.js"></script>
+<script src="~/lib/lodash/dist/lodash.min.js"></script>
+<script>
+    console.log('start jquery');
+    var people = ['Tom', 'Dick', 'Harry'];
+
+    // Remove any items that might already exist
+    $('.js-posts').empty();
+
+    // Add the items to the DOM
+    $.each(people, function (index, person) {
+        $('.js-posts').append("<li>" + person + "</li>");
+    });
+
+    // Listen to when the input changes
+    $('.js-filter').on('keyup', function () {
+        // Get the search value
+        var value = $(this).val();
+
+        // Hide all posts
+        $('.js-posts li').hide();
+
+        // Only show the posts that match
+        $('.js-posts li').filter(':contains("' + value + '")').show();
+    });
+</script>
+<script>
+    console.log('start vue');
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            filter: '',
+            people: [
+                'Tom', 'Dick', 'Harry'
+            ],
+            message: 'Hello World'
+        },
+        computed: {
+            filteredPeople() {
+                var self = this;
+                //return this.people.filter(function (item) {
+                //    return item.indexOf(self.filter) > -1;
+                //});
+                return _.filter(this.people, function (item) {
+                    return item.indexOf(self.filter) > -1;
+                });
+            }
+        }
+    });
+</script>

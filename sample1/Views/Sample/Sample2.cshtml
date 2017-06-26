@@ -1,0 +1,40 @@
+﻿<h1>Vue Sample: Toggle lable and button</h1>
+<div id="app">
+    <form class="form-group">
+        <span class="error alert-danger" v-show="!message">
+            You must enter a message
+        </span>
+
+        <textarea id="messageTextArea" v-model="message" class="form-control" placeholder="Enter Message"></textarea>
+
+        <button type="submit" class="btn" :disabled="disableSubmitButton">
+            Send Message
+        </button>
+    </form>
+
+    <pre>{{$data}}</pre>
+</div>
+
+<script src="~/lib/vue/dist/vue.min.js"></script>
+
+<script>
+    var vue = new Vue(
+        {
+            el: '#app',
+            data: {
+                message: ''
+            },
+            computed: {
+                data_to_json() {
+                    return JSON.stringify(this);
+                },
+                disableSubmitButton() {
+                    if (this.message) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+        });
+</script>
