@@ -4,18 +4,27 @@
     <ul>
         <li v-for="name in names">{{name}}</li>
     </ul>
-    <input type="text" class="form-control" />
-    <button class="btn btn-primary btn-sm">Add Name</button>
+    <input type="text" class="form-control" v-model="newName" v-on:keyup="addName" />
+    <button class="btn btn-primary btn-sm" v-on:click="addName">Add Name</button>
 </div>
 
 <script src="~/lib/vue/dist/vue.js"></script>
+<script src="~/lib/lodash/dist/lodash.js"></script>
 
 <script>
     new Vue({
         el: '#root',
         data: {
+            newName: '',
             names: ['Joe', 'Mary', 'Jane', 'Jack']
-
+        },
+        methods: {
+            addName: function () {
+                if (this.newName && _.indexOf(this.names, this.newName) == -1) {
+                    this.names.push(this.newName);
+                    this.newName = '';
+                }
+            }
         }
     });
 </script>
