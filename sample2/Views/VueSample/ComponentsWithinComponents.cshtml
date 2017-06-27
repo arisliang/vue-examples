@@ -1,0 +1,15 @@
+﻿<h1>Components Within Components</h1>
+
+<div id="root">
+    <task-list></task-list>
+</div>
+
+@section Scripts{
+    <script src="~/js/main.js"></script>
+
+    <script>
+        new Vue({
+            el: '#root'
+        });
+    </script>
+}
