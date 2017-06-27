@@ -22,22 +22,22 @@
     <button class="btn" :class="{ 'is-loading': isLoading }" v-on:click="toggleClass">Click Me</button>
 </div>
 
-<script src="~/lib/vue/dist/vue.js"></script>
+@section Scripts{
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                title: 'Now the title is being set through JavaScript',
+                className: 'color-red',
+                isLoading: false,
+            },
+            methods: {
+                toggleClass: function () {
+                    this.isLoading = true;
 
-<script>
-    new Vue({
-        el: '#root',
-        data: {
-            title: 'Now the title is being set through JavaScript',
-            className: 'color-red',
-            isLoading: false,
-        },
-        methods: {
-            toggleClass: function () {
-                this.isLoading = true;
+                }
 
             }
-
-        }
-    });
-</script>
+        });
+    </script>
+}

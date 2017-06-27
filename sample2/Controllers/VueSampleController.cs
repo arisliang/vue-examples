@@ -23,5 +23,15 @@ namespace sample2.Controllers
         {
             return View();
         }
+
+        public IActionResult ComputedProperties()
+        {
+            return View();
+        }
+
+        public IActionResult Components()
+        {
+            return View();
+        }
     }
 }

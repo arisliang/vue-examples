@@ -38,6 +38,8 @@
                     <li><a asp-area="" asp-controller="VueSample" asp-action="BasicDataBinding">1. Basic Data Binding</a></li>
                     <li><a asp-area="" asp-controller="VueSample" asp-action="Lists">2. Lists</a></li>
                     <li><a asp-area="" asp-controller="VueSample" asp-action="AttributeBinding">3. Attribute Binding</a></li>
+                    <li><a asp-area="" asp-controller="VueSample" asp-action="ComputedProperties">4. Computed Properties</a></li>
+                    <li><a asp-area="" asp-controller="VueSample" asp-action="Components">5. Components</a></li>
                 </ul>
             </div>
         </div>
@@ -53,6 +55,8 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/lodash/dist/lodash.js"></script>
+        <script src="~/lib/vue/dist/vue.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -68,6 +72,8 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="~/lib/lodash/dist/lodash.min.js"></script>
+        <script src="~/lib/vue/dist/vue.min.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 

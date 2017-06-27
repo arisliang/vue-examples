@@ -8,24 +8,22 @@
     <button class="btn btn-primary btn-sm" v-on:click="addName">Add Name</button>
 </div>
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/lodash/dist/lodash.js"></script>
-<script src="~/lib/vue/dist/vue.js"></script>
-
-<script>
-    new Vue({
-        el: '#root',
-        data: {
-            newName: '',
-            names: ['Joe', 'Mary', 'Jane', 'Jack']
-        },
-        methods: {
-            addName: function () {
-                if (this.newName && _.indexOf(this.names, this.newName) == -1) {
-                    this.names.push(this.newName);
-                    this.newName = '';
+@section Scripts{
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                newName: '',
+                names: ['Joe', 'Mary', 'Jane', 'Jack']
+            },
+            methods: {
+                addName: function () {
+                    if (this.newName && _.indexOf(this.names, this.newName) == -1) {
+                        this.names.push(this.newName);
+                        this.newName = '';
+                    }
                 }
             }
-        }
-    });
-</script>
+        });
+    </script>
+}

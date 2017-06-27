@@ -6,15 +6,15 @@
     <pre>The data of vue is {{$data}}</pre>
 </div>
 
-<script src="~/lib/vue/dist/vue.js"></script>
+@section Scripts{
+    <script>
+        var vue = new Vue({
+            el: '#root',
+            data: {
+                message: 'Hello World'
 
-<script>
-    var vue = new Vue({
-        el: '#root',
-        data: {
-            message: 'Hello World'
+            }
 
-        }
-
-    });
-</script>
+        });
+    </script>
+}
