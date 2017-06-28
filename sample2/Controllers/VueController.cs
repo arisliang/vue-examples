@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace sample2.Controllers
 {
-    public class VueSampleController : Controller
+    public class VueController : Controller
     {
         public IActionResult BasicDataBinding()
         {
@@ -49,6 +49,27 @@ namespace sample2.Controllers
         {
             // https://vuejs.org/v2/guide/events.html
             // check what's in the event and event target.
+            return View();
+        }
+
+        public IActionResult ComponentCommunication()
+        {
+            // child component event bubble up to parent component.
+            return View();
+        }
+
+        public IActionResult ComponentCommunication2()
+        {
+            // between sibling components
+            return View();
+        }
+
+        public IActionResult Select2()
+        {
+            // try select2. Vue has an integration example with this, but try using it directly without going through Vue.
+            // It's probably good enough for a direct use.
+            // https://select2.github.io/examples.html
+            // https://vuejs.org/v2/examples/select2.html
             return View();
         }
     }

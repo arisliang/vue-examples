@@ -1,0 +1,38 @@
+﻿<h1>Parent Child Component communication through custom event</h1>
+
+<div id="root" class="container">
+    <coupon v-on:applied="root_onCouponApplied"></coupon>
+    <h1 v-if="couponApplied">You used a coupon!</h1>
+</div>
+
+<script type="text/template" id="coupon-template">
+    <input placeholder="Enter your coupon code" v-on:blur="coupon_onCouponApplied" />
+</script>
+
+@section Scripts{
+    <script>
+        Vue.component('coupon', {
+            template: '#coupon-template',
+            methods: {
+                coupon_onCouponApplied: function () {
+                    alert("in coupon_onCouponApplied");
+                    this.$emit('applied');
+                }
+            }
+        })
+
+        var root = new Vue({
+            el: '#root',
+            data: {
+                couponApplied: false
+            },
+            methods: {
+                root_onCouponApplied: function () {
+                    alert("in root_onCouponApplied");
+                    this.couponApplied = true;
+                }
+            }
+        });
+    </script>
+
+}
