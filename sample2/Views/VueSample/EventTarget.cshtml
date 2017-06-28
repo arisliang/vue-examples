@@ -1,0 +1,31 @@
+﻿<h1>Event Handler</h1>
+
+<div id="example-2">
+    <!-- `greet` is the name of a method defined below -->
+    <button id="btn" v-on:click="greet">Greet</button>
+</div>
+
+@section Scripts{
+    <script>
+        var example2 = new Vue({
+            el: '#example-2',
+            data: {
+                name: 'Vue.js'
+            },
+            // define methods under the `methods` object
+            methods: {
+                greet: function (event) {
+                    // `this` inside methods points to the Vue instance
+                    alert('Hello ' + this.name + '!')
+                    // `event` is the native DOM event
+                    if (event) {
+                        console.log(event);
+                        alert(event.target.tagName)
+                    }
+                }
+            }
+        })
+        // you can invoke methods in JavaScript too
+        example2.greet() // -> 'Hello Vue.js!'
+    </script>
+}

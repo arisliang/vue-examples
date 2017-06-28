@@ -38,5 +38,18 @@ namespace sample2.Controllers
         {
             return View();
         }
+
+        public IActionResult Modal()
+        {
+            // https://vuejs.org/v2/examples/modal.html
+            return View();
+        }
+
+        public IActionResult EventTarget()
+        {
+            // https://vuejs.org/v2/guide/events.html
+            // check what's in the event and event target.
+            return View();
+        }
     }
 }
